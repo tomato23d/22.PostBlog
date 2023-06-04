@@ -1,25 +1,31 @@
 <div class="menu-container">
   
-      <div class="card-header col-md-10">
-          <h2> Header on homepage handlebar </h2>
+      <div class="card-header col-md-12">
+          <h2> Homepage Feed </h2>
       </div>
 
   {{#each articles as |article|}}
-    <div class="cards">  
+   
+      <div class="card-header col-md-12">
+
               <section class = "card1">
-                  {{article.id}}.
+          <!--        {{article.id}}.-->
                   {{article.title}}
              </section>
-        
+
+                <section class = "card1">
+                  Posted by 
+                  {{article.user_id}}  
+                  on:
+                  {{article.date_created}}
+            </section>
+        </div>
               <section class = "card1">
                    {{article.text}}
              </section>
            
-             <section class = "card1">
-                  Project Initiate Date:
-                  {{article.date_created}}
-            </section>
-    </div>
+          
+  
 
   {{/each}}
 </div> 
