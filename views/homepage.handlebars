@@ -1,0 +1,25 @@
+<div class="menu-container">
+  
+      <div class="card-header col-md-10">
+          <h2> HELLO POST </h2>
+      </div>
+
+  {{#each articles as |article|}}
+    <div class="cards">  
+              <section class = "card1">
+                  {{article.id}}.
+                  {{article.title}}
+             </section>
+        
+              <section class = "card1">
+                   {{article.text}}
+             </section>
+           
+             <section class = "card1">
+                  Project Initiate Date:
+                  {{article.date_created}}
+            </section>
+    </div>
+
+  {{/each}}
+</div> 
