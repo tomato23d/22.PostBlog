@@ -1,0 +1,24 @@
+{
+  "name": "22.postblog",
+  "version": "1.0.0",
+  "description": "turning travel app into post blog\r checking form\r database\r checking form\r copy folders accross\r checking form\r renew routes\r checking form\r install handlebars",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^3.3.3",
+    "sequelize": "^6.32.0",
+    "sqlite3": "^5.1.6"
+  }
+}
