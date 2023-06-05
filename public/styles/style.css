@@ -8,6 +8,7 @@
     --dark: #182c23;
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
+    --ahoover: rgba(224, 122, 139, 0.781);
   }
   
   body {
@@ -185,5 +186,16 @@
     color: var(--secondary);
     border: 1px solid var(--dark);
   }
+
+  a {
+    color: var(--ahoover);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--ahoover);
+    text-decoration: underline;
+  }
+  
   
   

@@ -21,12 +21,9 @@ User.init(
         allowNull: false
     },
     password: {
-        type: DataTypes,
+        type: DataTypes.STRING,
         allowNull: false
     },
-    validate: {
-        len: [8],
-      },
 },
 {   sequelize,
     timestamps: false,
