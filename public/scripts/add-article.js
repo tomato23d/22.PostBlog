@@ -1,18 +1,24 @@
-document.getElementById("the-form").addEventListener("click", (e) => {
-    e.preventDefault();
+
+async function postBlog(event) {
+
+    event.preventDefault();
     const post = {
     title: document.getElementById("title").value.trim(),
     text:  document.getElementById("text").value.trim(),
     };
     
-    fetch('/', {
+    const response = await fetch('/api/articles', {
 method: 'POST',
 headers: {'Content-Type': 'application/json',},
 body: JSON.stringify(post)})
-.then((res) => res.json())
-.then((data) => {console.log('Successful POST Review request:', data);
-  return data;
-})
-.catch((error) => {console.error('Error in POST request:', error);
-});
-})
+
+  console.log(response);
+
+ 
+  document.location.replace('/');
+ 
+}
+
+
+
+document.getElementById("the-form").addEventListener("submit", postBlog);
