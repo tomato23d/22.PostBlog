@@ -3,23 +3,24 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const routes = require('./controllers');
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ });
 const sequelize = require('./config/connection');
 //const helpers = require('./utils');
 
-
-// const sess = {
-  
-//   secret: 'Super secret secret',
-//   resave: false,
-//   saveUninitialized: false,
-// };
-
-// app.use(session(sess));
-
-// Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+//const hbs = exphbs.create({ helpers });
+const sess = {
+  secret: 'Super secret secret',
+  resave: false,
+  saveUninitialized: false,
+};
+
+// Sets up the Express App
+
+app.use(session(sess));
+
 
 //const hbs = exphbs.create({ helpers });
 // Set Handlebars as the default template engine.
