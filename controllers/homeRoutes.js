@@ -17,17 +17,17 @@ const sequelize = require('../config/connection');
    })
 
 
-//    router.get('/project/:id', async (req, res) => {
+   router.get('/article/:id', async (req, res) => {
 
-//     try{ 
+    try{ 
       
-//       const projectData = await Project.findByPk(req.params.id);
-//       //console.log(projectData)
-//       const project = projectData.get({ plain: true })
-//       res.render('project', project);
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//       });
+      const articleData = await Article.findByPk(req.params.id);
+    
+      const article = articleData.get({ plain: true })
+      res.render('article', article);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+      });
 
 module.exports = router;

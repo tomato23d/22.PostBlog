@@ -180,4 +180,10 @@
     margin-right: 10px;
   }
   
+  .btn.btn-primary {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--dark);
+  }
+  
   
