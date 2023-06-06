@@ -8,17 +8,14 @@ async function postBlog(event) {
     };
     
     const response = await fetch('/api/articles', {
-method: 'POST',
-headers: {'Content-Type': 'application/json',},
-body: JSON.stringify(post)})
+        method: 'POST',
+        headers: {'Content-Type': 'application/json',},
+        body: JSON.stringify(post)})
 
-  console.log(response);
+        console.log(response);
 
- 
-  document.location.replace('/');
+        document.location.replace('/');
  
 }
-
-
 
 document.getElementById("the-form").addEventListener("submit", postBlog);

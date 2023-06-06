@@ -11,15 +11,25 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        The Tech Blog
-      </h1>
-         <a class="btn btn-primary" href="./add-article" role="button">Write New Post</a>
+ <header class="display-flex justify-space-between align-center p-2">
+      <h1> The Tech Blog  </h1>
+      <h2> Home </h2>
+      <h2> Dashboard </h2>
+      <h2>  {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <a href="./login">Login</a>
+      {{/if}}  </h2>
+
+      <a class="btn btn-primary" href="./add-article" role="button">Write New Post</a> 
     </header>
       <main class="container container-fluid mt-5">
         {{{ body }}}
       </main>
+       {{#if loggedIn}}
+       <script src="/scripts/logout.js"></script>
+        {{/if}}
+</body>
   </div>
   </body>
 

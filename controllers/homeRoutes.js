@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Article = require('../models/article');
-const sequelize = require('../config/connection');
+//const sequelize = require('../config/connection');
 
 
    router.get('/', async (req, res) => {
@@ -41,5 +41,15 @@ const sequelize = require('../config/connection');
         }
           });
     
+
+        router.get('/login', async (req, res) => {
+
+            try{ 
+              res.render('login');
+            } catch (err) {
+              res.status(500).json(err);
+            }
+              });
+
 
 module.exports = router;
