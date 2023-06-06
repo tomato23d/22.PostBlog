@@ -9,7 +9,7 @@ async function postBlog(event) {
     date_created: date.toLocaleString(),
     };
 
-    console.log(post);
+    //console.log(post);
 
     const response = await fetch('/api/articles', {
         method: 'POST',

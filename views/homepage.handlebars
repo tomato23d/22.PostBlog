@@ -1,32 +1,29 @@
-<div class="menu-container">
-  
-      <div class="card-header col-md-12">
-          <h2> Homepage Feed </h2>
-      </div>
-
-  {{#each articles as |article|}}
    
-      <div class="card-header col-md-12">
+   
+   
+    {{#each articles as |article|}}
 
-              <section class = "card1">
-          <!--        {{article.id}}.-->
-                  {{article.title}}
-             </section>
+              
+      
+              <section class = "card_title">
+             <p class="strong">   Post Title:  {{article.title}}</p>
 
-                <section class = "card1">
-                  Posted by 
+             <p>    Post Category: 
+          {{article.category.category_name}}  </p>
+              <p>       Posted by
                   {{article.user_id}}  
-                  on:
-                  {{article.date_created}}
+                    on:
+                  {{format_date article.date_created}} </p>
+              </section>
+
+              <section class = "card_body">
+              <p>    {{article.text}} </p>
             </section>
-        </div>
-              <section class = "card1">
-                   {{article.text}}
-             </section>
+            
            
   {{/each}}
-</div> 
-
+  
+ 
  <!-- <button type="submit" class="btn btn-primary" id="submit-btn">
           New Post
   </button>

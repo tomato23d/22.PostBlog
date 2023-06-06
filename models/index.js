@@ -3,16 +3,14 @@ const Article = require('./article');
 const User = require('./user');
 
 Category.hasMany(Article, {
-  foreignKey: 'place_id',
+  foreignKey: 'category_id',
   onDelete: 'CASCADE',
 });
 
 User.hasMany(Article, {
-  foreignKey: 'traveller_id',
+  foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
-
-
 
 Article.belongsTo(Category, {
   foreignKey: 'category_id',
