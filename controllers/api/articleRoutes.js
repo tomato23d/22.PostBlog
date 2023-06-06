@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
       title: req.body.title,
       text: req.body.text,
       rate: null,
-      date_created: "2023-06-05",
+      date_created: req.body.date_created,
       category_id: 1,
       user_id: 1
        });

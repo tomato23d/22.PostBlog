@@ -24,7 +24,8 @@ Article.init(
         type: DataTypes.INTEGER
     },
     date_created: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        allowNull: false
     },
  
    category_id: {

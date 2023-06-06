@@ -182,7 +182,7 @@
   .btn.btn-primary {
     background: var(--primary);
     color: var(--secondary);
-    border: 1px solid var(--primary-light);
+    border: 1px solid var(--ahoover);
     font-size: 2rem;
     margin-left: 10px;
   }
