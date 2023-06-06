@@ -22,3 +22,4 @@ body: JSON.stringify(post)})
 
 
 document.getElementById("the-form").addEventListener("submit", postBlog);
+document.getElementById("submit-btn").addEventListener("click", postBlog);

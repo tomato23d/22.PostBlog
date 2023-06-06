@@ -1,22 +1,35 @@
-<div class="project-card">
+ <!-- <div class="project-card">-->
 
-        <div class="card-body">
+      <div class="board">
          
 
 
-        <form  id="the-form">
-          <input type="text" id="title"
-          placeholder="your post title" 
-          />
+        <form class="p-5 col-8" id="the-form">
 
-          <input type="text" id="text"
-          placeholder="your post" 
-          />
-           <button type="submit" class="btn btn-primary" id="submit-btn">
-          Submit New Post - use enter instead
-</form>
+          <section class = "card1">
+              <label for='title'> Title:
+              </label>
+              <br />
+                <textarea id="title"
+                     placeholder="your post title" rows='5' cols='120'>
+                </textarea>
+          </section>
+
+          <section class = "card1">
+             <label for='post'> Post:
+              </label>
+              <br />
+                <textarea id="text"
+                     placeholder="your post" rows='20' cols='120'>
+                </textarea>
+          </section>
+           
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+                  Submit New Post
+          </button>
+        </form>
+
 <script src="/scripts/add-article.js"></script>
 
 </div>
 
-  </div>
