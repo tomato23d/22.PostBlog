@@ -22,5 +22,20 @@ router.post('/', async (req, res) => {
   }
   });
 
+  
+  // router.get('/article/:id', async (req, res) => {
+
+  //   try{ 
+      
+  //     const articleData = await Article.findByPk(req.params.id);
+    
+  //     const article = articleData.get({ plain: true })
+  //     res.render('article', article);
+  //   } catch (err) {
+  //     res.status(500).json(err);
+  //   }
+  //     });
+
+
 
 module.exports = router;

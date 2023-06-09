@@ -21,18 +21,18 @@ const sequelize = require('../config/connection');
 
 ////////////////////////////////////////
 
-   router.get('/article/:id', async (req, res) => {
+  //  router.get('/article/:id', async (req, res) => {
 
-    try{ 
+  //   try{ 
       
-      const articleData = await Article.findByPk(req.params.id);
+  //     const articleData = await Article.findByPk(req.params.id);
     
-      const article = articleData.get({ plain: true })
-      res.render('article', article);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-      });
+  //     const article = articleData.get({ plain: true })
+  //     res.render('article', article);
+  //   } catch (err) {
+  //     res.status(500).json(err);
+  //   }
+  //     });
 
 
 
@@ -55,34 +55,20 @@ const sequelize = require('../config/connection');
             }
               });
 
-          router.get('/hellopage', async (req, res) => {
-            try{
-              const categoryData = await Category.findAll();
-              const categories = categoryData.map((categoryData) => {
-                  return categoryData.get({plain:true});
-              })
-      
-              res.render("hellopage", {categories, loggedIn: req.session.loggedIn });
-          } catch (err){res.status(500).json(err);}
-      
-      });
-      router.get('/category', async(req, res) => {
+      router.get('/hellopage', async(req, res) => {
         try{
             const categoryData = await Category.findAll(
               { include: [{model: Article,
                 attributes: ['title'],}]
-
               }
             );
             const categories = categoryData.map((categoryData) => {
                 return categoryData.get({plain:true});
             });
-            console.log('*****categories');
             console.log(categories);
     
-            res.render("hellopage", {categories});
+            res.render("hellopage", {categories, loggedIn: req.session.loggedIn});
         } catch (err){res.status(500).json(err);}
-    
     })
     
 
