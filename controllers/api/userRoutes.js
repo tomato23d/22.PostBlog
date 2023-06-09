@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
       });
+
       // Set up sessions with a 'loggedIn' variable set to `true`
         req.session.save(() => {
         req.session.userId = dbUserData.id;

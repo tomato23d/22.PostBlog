@@ -1,1 +1,22 @@
-<h1> hello page </h1>
+
+
+ {{#each categories as |category|}}
+
+   
+     <p>    Post Category: 
+    {{category.category_name}}  </p>
+
+  <p>    articles for this category: </p>
+      
+      
+      {{#each category.articles as |article_in_category|}}
+      <p>
+        {{article_in_category.title}}
+      </p>
+      {{/each}}
+
+    
+
+ {{/each}}
+
+

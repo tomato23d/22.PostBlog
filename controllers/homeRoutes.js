@@ -1,21 +1,6 @@
 const router = require('express').Router();
-//const Article = require('../models/article');
-//const Category = require('../models/category');
 const { Article, Category, User } = require('../models');
 const sequelize = require('../config/connection');
-
-
-  //  router.get('/', async (req, res) => {
-  //   try{ 
-  //    const articleData = await Article.findAll();
-  //    const articles = articleData.map((articleData) => {
-  //      return articleData.get({plain:true});
-  //    });
-  //  //  console.log(articles);
-  //    res.render("homepage", {articles});
-  //   } catch (err){res.status(500).json(err);}
-   
-  //  })
 
 // /////////////////////////////////////////
    router.get('/', async (req, res) => {
@@ -29,8 +14,7 @@ const sequelize = require('../config/connection');
        return articleData.get({plain:true});
      });
    
-     console.log(articles);
-     res.render("homepage", {articles});
+     res.render("homepage", {articles, loggedIn: req.session.loggedIn});
     } catch (err){res.status(500).json(err);}
    
    })
@@ -72,13 +56,35 @@ const sequelize = require('../config/connection');
               });
 
           router.get('/hellopage', async (req, res) => {
+            try{
+              const categoryData = await Category.findAll();
+              const categories = categoryData.map((categoryData) => {
+                  return categoryData.get({plain:true});
+              })
+      
+              res.render("hellopage", {categories, loggedIn: req.session.loggedIn });
+          } catch (err){res.status(500).json(err);}
+      
+      });
+      router.get('/category', async(req, res) => {
+        try{
+            const categoryData = await Category.findAll(
+              { include: [{model: Article,
+                attributes: ['title'],}]
 
-          try{ 
-            res.render('hellopage');
-                } catch (err) {
-                  res.status(500).json(err);
-               }
-             });
+              }
+            );
+            const categories = categoryData.map((categoryData) => {
+                return categoryData.get({plain:true});
+            });
+            console.log('*****categories');
+            console.log(categories);
+    
+            res.render("hellopage", {categories});
+        } catch (err){res.status(500).json(err);}
+    
+    })
+    
 
 
 module.exports = router;
