@@ -7,16 +7,17 @@ async function postBlog(event) {
     title: document.getElementById("title").value.trim(),
     text:  document.getElementById("text").value.trim(),
     date_created: date.toLocaleString(),
+    
     };
 
-    //console.log(post);
+    console.log(post);
 
     const response = await fetch('/api/articles', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',},
         body: JSON.stringify(post)})
 
-        //console.log(response);
+    console.log(response);
 
       document.location.replace('/');
  
