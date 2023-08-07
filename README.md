@@ -1,19 +1,23 @@
 # PostBlog
 
 
-
 ## The Application
 
-The application is in progress to provide the blogging platform for visitors to post comments on selected topics.
+The application has been developed to showcase the handlebars technology in MVC configuration with SQL database support.
 
+Given the delay with submission, it become obvious that later works including the final MERN project are constructed on more advanced platform.  
 
 
 ## Methods
 
-Recently acquired skills of npm products such as handlebars, express suite and bcrypt have been mastered to draft the presented code.
-
+Acquired skills of npm products such as handlebars, express suite and bcrypt have been mastered to draft the presented code.
 
 
 ## Further Development
 
-Further tunning and developments of this code are in progress.
+Plenty of work is required to beautify this page.
+
+
+## Demonstration
+
+The application functionality is recorded in video: [https://drive.google.com/file/d/1aF_ZwsJS52J9HwWZGcWPhtvBqQqSA5_R/view].
